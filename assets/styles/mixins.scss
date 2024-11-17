@@ -1,0 +1,31 @@
+//Ширина экрана
+$ps: 'phone-small';
+$pb: 'phone-big';
+$ts: 'tablet-small';
+$tb: 'tablet-big';
+$l: 'laptop';
+$d: 'desktop';
+
+@mixin respond-to($mediaWidth, $mediaHeight: null) {
+  @if $mediaWidth == $ps {
+    @media (max-width: 374px) { @content; }
+  } @else if $mediaWidth == $pb {
+    @media (max-width: 743px) { @content; }
+  } @else if $mediaWidth == $ts {
+    @media (max-width: 1023px) { @content; }
+  } @else if $mediaWidth == $tb {
+    @media (max-width: 1279px) { @content; }
+  } @else if $mediaWidth == $l {
+    @media (max-width: 1439px) { @content; }
+  } @else if $mediaWidth == $d {
+    @media (max-width: 1900px) { @content; }
+  }
+}
+
+@mixin hover {
+  @media (any-hover: hover) { @content; }
+}
+
+@mixin active {
+  @media (any-pointer: coarse) { @content; }
+}

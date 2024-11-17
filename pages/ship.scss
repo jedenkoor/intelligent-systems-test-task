@@ -1,0 +1,31 @@
+.ship {
+  &__info {
+    padding-left: 0;
+    list-style: none;
+  }
+  &-info {
+    &__item {
+      display: flex;
+      border: 0.1rem solid black;
+      @include respond-to($pb) {
+        flex-direction: column;
+      }
+      span {
+        padding: 1rem;
+        &:first-child {
+          flex: 1;
+          border-right: 0.1rem solid black;
+          @include respond-to($pb) {
+            border-right: none;
+          }
+        }
+        &:last-child {
+          flex: 3;
+        }
+      }
+    }
+  }
+  &__back {
+    margin: 2rem 0;
+  }
+}
